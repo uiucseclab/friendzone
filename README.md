@@ -38,3 +38,7 @@ While running, there are several commands you can execute from within the script
   - Stops the service
   
 If, for whatever reason, you want to erase all IPs that are stored, simply erase the *friendzone.db* file.
+
+####References
+Most of the basic proxy logic comes from [here](http://voorloopnul.com/blog/a-python-proxy-in-less-than-100-lines-of-code/)
+I also spent many hours scouring stackoverflow.com for help with other python functionality
