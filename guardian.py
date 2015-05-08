@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+#Modified from http://voorloopnul.com/blog/a-python-proxy-in-less-than-100-lines-of-code/
+
 import socket
 import select
 import time
