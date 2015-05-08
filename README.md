@@ -2,7 +2,7 @@
 
 Author: James Beck
 
-**About**
+###About
 
 This script is a type of intrusion detection system.
 
@@ -12,7 +12,7 @@ Essentially this script works as a proxy: players connect to it instead of the a
 
 Obviously this script is not meant to be used for services that get a lot of "visitor" traffic, such as for a website. It also requires that the server's firewall be properly configured, otherwise people can just bypass the proxy and connect to the service it's protecting directly.
 
-**Usage**
+###Usage
 The first time the script runs, it will create a database file called *friendzone.db*. This is where all the IPs and their connection times are stored.
 
 In order to work properly, you must have the script listening on whatever port the service you wish to protect normally uses. This means that you'll have to run that service on a different port.
@@ -30,12 +30,11 @@ There are a couple options you can tweak in *guardian.py*:
   - I wouldn't recommend changing these, but you can if you want to.
   
 While running, there are several commands you can execute from within the script
-- *protect*
+- **protect**
   - This will put the script in protection mode and start filtering IP addresses
-- *relax*
+- **relax**
   - This disables protection and allows any IP to connect again
-- *stop*
+- **stop**
   - Stops the service
   
-**Misc**
 If, for whatever reason, you want to erase all IPs that are stored, simply erase the *friendzone.db* file.
