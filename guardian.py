@@ -13,7 +13,8 @@ import sqlite3
 # But when buffer get to high or delay go too down, you can broke things
 buffer_size = 4096
 delay = 0.0001
-forward_to = ('localhost', 8888)
+forward_ip = 'localhost'
+threshold = 30 #60*60*24*5 #number of seconds before someone is a regular. In this case, 5 days
 
 conn = sqlite3.connect('friendzone.db')
 c = conn.cursor()
@@ -25,7 +26,6 @@ conn.commit()
 
 underattack = False
 
-threshold = 30 #60*60*24*5 #number of seconds before someone is a regular. In this case, 5 days
  
 class Forward:
     def __init__(self):
@@ -167,7 +167,7 @@ if __name__ == '__main__':
     print "     'relax' to run protection off"
     print "     'stop' to end the program"
     port = int(sys.argv[1])
-    forward_to = ('localhost', int(sys.argv[2]))
+    forward_to = (forward_ip, int(sys.argv[2]))
     server = TheServer('', port)
     try:
         server.main_loop()
