@@ -14,7 +14,7 @@ import sqlite3
 buffer_size = 4096
 delay = 0.0001
 forward_ip = 'localhost'
-threshold = 30 #60*60*24*5 #number of seconds before someone is a regular. In this case, 5 days
+threshold = 60*60*24*5 #number of seconds before someone is a regular. In this case, 5 days
 
 conn = sqlite3.connect('friendzone.db')
 c = conn.cursor()
@@ -67,6 +67,8 @@ class TheServer:
                         strip = line.rstrip()
                         if strip == 'stop':
                             print "Goodbye"
+                            conn.commit()
+                            conn.close()
                             time.sleep(1)
                             sys.exit(0)
                         elif strip == 'protect':
